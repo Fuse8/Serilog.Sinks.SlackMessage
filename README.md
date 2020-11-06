@@ -2,6 +2,7 @@
 
 Writes Serilog events to the Slack using bot api
 
+[![NuGet Version](https://img.shields.io/nuget/v/Serilog.Sinks.SlackMessage.svg?style=flat)](https://www.nuget.org/packages/Serilog.Sinks.SlackMessage/)
 ## Geting started
 
 [Create](https://api.slack.com/bot-users#getting-started) a Slack Bot and give it at least two scopes: [chat:write](https://api.slack.com/scopes/chat:write) and [files:write](https://api.slack.com/scopes/files:write). Than add this bot to the channel where log events will be written.
