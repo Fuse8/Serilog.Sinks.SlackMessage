@@ -35,7 +35,7 @@ Log.Logger = new LoggerConfiguration()
         .CreateLogger();
 ```
 
-Also you can configure the sink in appsettings.json.
+You can also configure the sink in appsettings.json.
 
 ```json
 {
@@ -75,7 +75,7 @@ Log.Logger = new LoggerConfiguration()
         .CreateLogger();
 ```
 
-Remember to register SelfLog before the sink registration. Otherwise you will not see errors that occurred in the sink
+It is important to register SelfLog before the sink registration. Otherwise you will not see errors occurred in the sink
 
 For example:
 
@@ -85,9 +85,9 @@ SelfLog.Enable(Console.WriteLine);
 
 ## Samples
 
-![Simple Message](/assets/sample1.bmp)
+![Simple Message](https://raw.githubusercontent.com/Fuse8/Serilog.Sinks.SlackMessage/main/assets/sample1.bmp)
 
-Set the `MaxMessageLineCount` option to `null` if you wanna receive all event information in one message. 
+Set the `MaxMessageLineCount` option to `null` if you want to receive all event information in one message. 
 ```csharp
     Log.Logger = new LoggerConfiguration()
         .WriteTo.Slack(
@@ -99,7 +99,7 @@ Set the `MaxMessageLineCount` option to `null` if you wanna receive all event in
       Log.Information(longMessage);
 ```
 
-![Long Message](/assets/long_message.bmp)
+![Long Message](https://raw.githubusercontent.com/Fuse8/Serilog.Sinks.SlackMessage/main/assets/long_message.bmp)
 
 
 But it's better to set a value between 5 to 10. Long message will be cutted and full message will be sent to the thread.
@@ -113,7 +113,7 @@ But it's better to set a value between 5 to 10. Long message will be cutted and 
         .CreateLogger();
 ```
 
-![Short Message](/assets/short_message.bmp)
+![Short Message](https://raw.githubusercontent.com/Fuse8/Serilog.Sinks.SlackMessage/main/assets/short_message.bmp)
 
 
 You can notify usergroup, channel or specific users. Just set the `Mentions` option
@@ -137,11 +137,11 @@ You can notify usergroup, channel or specific users. Just set the `Mentions` opt
         .CreateLogger();
 ```
 
-If an event contains an exception, it always puts to a thread. Set the `SendExceptionAsFile` optiont to `false` to receive exception in message body.
+If an event contains exception, the sink always send exception to a thread. Set the `SendExceptionAsFile` option to `false` to receive exception in message body.
  
-![Exception in Message](/assets/exception_in_code_block.bmp)
+![Exception in Message](https://raw.githubusercontent.com/Fuse8/Serilog.Sinks.SlackMessage/main/assets/exception_in_code_block.bmp)
 
-If you set the `SendExceptionAsFile` optiont to `true`, an exception will be sent as text file (looks prettier in our opinion)
+If you set the `SendExceptionAsFile` option to `true`, an exception will be sent as a text file (which looks prettier in our opinion)
 
 ```csharp
       Log.Logger = new LoggerConfiguration()
@@ -152,4 +152,4 @@ If you set the `SendExceptionAsFile` optiont to `true`, an exception will be sen
         .CreateLogger();
 ```
 
-![Exception in File](/assets/exception_in_file.bmp)
+![Exception in File](https://raw.githubusercontent.com/Fuse8/Serilog.Sinks.SlackMessage/main/assets/exception_in_file.bmp)
