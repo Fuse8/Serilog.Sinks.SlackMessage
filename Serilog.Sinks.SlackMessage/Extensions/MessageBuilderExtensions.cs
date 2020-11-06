@@ -94,7 +94,7 @@ namespace Serilog.Sinks.SlackMessage.Extensions
 			{
 				case LogEventLevel.Error:
 				case LogEventLevel.Fatal:
-					color = "#FF0000";
+					color = "#B22222";
 					break;
 				case LogEventLevel.Verbose:
 				case LogEventLevel.Information:

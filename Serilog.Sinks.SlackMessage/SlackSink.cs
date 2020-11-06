@@ -127,7 +127,7 @@ namespace Serilog.Sinks.SlackMessage
 			var messageBuilder = MessageBuilderExtensions
 				.CreateMessageBuilder(_logOptions.Channel, logEvent, message);
 
-			if (_logOptions.Mentions.TryGetValue(logEvent.Level, out var mention))
+			if (_logOptions.Mentions != null && _logOptions.Mentions.TryGetValue(logEvent.Level, out var mention))
 			{
 				messageBuilder.MentionBlock(mention);
 			}
